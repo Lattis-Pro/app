@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.lattis_pro.twa",
+        "sha256_cert_fingerprints": ["72:80:9A:C6:35:17:E9:2B:98:94:9C:D6:6E:CB:BF:7E:C7:49:2E:C1:7E:C0:D0:2A:87:21:8A:69:CA:0E:64:99"]
+      }
+    }]
