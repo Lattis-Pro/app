@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Portal Unificado | Camargo Group - Convenios BCP</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23002A8F'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FF7800'/%3E%3C/svg%3E">
+<style>
+:root{--blue:#002A8F;--blue-d:#001B5E;--orange:#FF7800;--s200:#e2e8f0;--s300:#cbd5e1;--s400:#94a3b8;--s500:#64748b;--s700:#334155;--s800:#1e293b;--s900:#0f172a}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0;overflow:hidden;background:#0b1329;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5; user-select:none; -webkit-user-select:none;}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Marca de Agua */
+.watermark {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLd1ynG_VPVvtVimWalYNse5WpqgMwQFPQQTvoOOwGuGMc3OK4-xZzNk&s=10'); /* Sube tu imagen como logo.png al repositorio */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    opacity: 0.08; /* Opacidad tenue */
+    pointer-events: none; /* Crucial: permite hacer clics a través de la imagen */
+    z-index: 9999; /* Sobrepone la marca en todos los paneles */
+}
+
+/* Login */
+.login{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(2,6,23,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.card{position:relative;overflow:hidden;width:100%;max-width:28rem;padding:2rem;background:#fff;border:1px solid var(--s200);border-radius:1.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.4)}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:.5rem;background:linear-gradient(90deg,#1e3a8a,#4f46e5,var(--orange))}
+.head{margin-bottom:1.5rem;text-align:center}
+.badge{display:inline-flex;margin-bottom:.75rem;padding:.75rem;font-size:1.875rem;color:var(--blue);background:#eff6ff;border-radius:1rem;box-shadow:inset 0 2px 4px rgba(0,0,0,.06)}
+h1{margin:0;font-size:1.25rem;font-weight:900;letter-spacing:-.025em;color:var(--blue)}
+.sub{margin:.25rem 0 0;font-size:.75rem;color:var(--s500)}
+form{display:grid;gap:1rem}
+label{display:block;margin-bottom:.25rem;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--s700)}
+.fld{position:relative}
+.fld .i{position:absolute;left:.875rem;top:50%;transform:translateY(-50%);font-size:.875rem;color:var(--s400)}
+input{width:100%;padding:.625rem .875rem .625rem 2.5rem;font-size:.875rem;color:var(--s900);background:#fff;border:1px solid var(--s300);border-radius:.75rem}
+input:focus{outline:2px solid var(--blue);border-color:transparent}
+.err{padding:.625rem;font-size:.75rem;font-weight:600;text-align:center;color:#e11d48;background:#fff1f2;border:1px solid #fecdd3;border-radius:.75rem}
+.go{padding:.75rem;font-size:.875rem;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--blue),#1e40af);border-radius:.75rem;box-shadow:0 4px 6px rgba(0,0,0,.15)}
+.go:hover{background:linear-gradient(90deg,var(--blue-d),#312e81)}
+.go:disabled{opacity:.7;cursor:wait}
+
+/* App */
+.app{display:flex;flex-direction:column;width:100%;height:100vh;height:100dvh;color:#fff}
+.top{flex:none;z-index:30;background:var(--s900);border-bottom:1px solid var(--s800)}
+.top-status,.top-nav{display:flex;align-items:center;gap:.75rem;padding:.5rem 1rem}
+.top-status{font-size:.75rem;border-bottom:1px solid var(--s800)}
+.brand{display:flex;align-items:center;gap:.5rem;padding:.25rem .75rem;background:var(--s900);border:1px solid var(--s700);border-radius:99px}
+.brand b{color:var(--s200)}
+.brand .x{color:var(--s500)}
+.brand .c{font-weight:600;color:#60a5fa}
+.dot{width:.5rem;height:.5rem;background:#34d399;border-radius:50%;animation:p 2s ease-in-out infinite}
+@keyframes p{50%{opacity:.35}}
+.tag{padding:.125rem .5rem;font-size:.625rem;color:#93c5fd;background:rgba(30,58,138,.6);border-radius:.25rem}
+.ses{display:flex;align-items:center;gap:.375rem;margin-left:auto;font-size:.6875rem;color:var(--s400)}
+.top-nav{background:rgba(30,41,59,.7)}
+.tabs{display:flex;flex:1;gap:.375rem;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{display:flex;flex:none;align-items:center;gap:.5rem;padding:.375rem .875rem;font-size:.75rem;font-weight:700;color:var(--s300);background:var(--s800);border-radius:.5rem}
+.tab:hover{background:var(--s700)}
+.tab[aria-selected=true]{color:#fff;background:#2563eb;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.acts{display:flex;flex:none;gap:.5rem}
+.ibtn{display:flex;align-items:center;justify-content:center;gap:.375rem;min-width:2rem;height:2rem;padding:0 .5rem;font-size:.875rem;color:var(--s300);background:var(--s800);border-radius:.5rem}
+.ibtn:hover{background:var(--s700)}
+.ibtn .lbl{font-size:.75rem;font-weight:600}
+.out{padding:0 .75rem;color:#fda4af;background:rgba(244,63,94,.2);border:1px solid rgba(244,63,94,.3);border-radius:99px}
+.out:hover{background:rgba(244,63,94,.3)}
+
+/* Paneles e iframes */
+.paneles{position:relative;flex:1;min-height:0;background:#fff}
+.panel{position:absolute;inset:0}
+iframe{display:block;width:100%;height:100%;border:0}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:1rem;font-size:.875rem;text-align:center;color:var(--s500);background:#fff}
+.ov p{max-width:26rem;margin:0}
+.ov-b{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.btn{padding:.5rem 1rem;font-size:.8125rem;font-weight:700;color:#fff;background:var(--blue);border-radius:.625rem}
+.btn:hover{background:var(--blue-d)}
+.spin{width:2rem;height:2rem;border:3px solid var(--s200);border-top-color:var(--blue);border-radius:50%;animation:g .8s linear infinite}
+@keyframes g{to{transform:rotate(1turn)}}
+
+@media (max-width:639px){.top-status,.ibtn .lbl{display:none}.out{padding:0 .5rem}}
+@media (pointer:coarse){.tab,.ibtn{min-height:2.75rem}.ibtn{min-width:2.75rem}}
+@media (prefers-reduced-motion:reduce){.dot,.spin{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="watermark" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+<symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01"/></symbol>
+<symbol id="i-board" viewBox="0 0 24 24"><path d="M2 3h20M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3M7 21l5-5 5 5"/></symbol>
+<symbol id="i-reload" viewBox="0 0 24 24"><path d="M23 4v6h-6M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+</defs></svg>
+
+<!-- Login -->
+<div id="login" class="login">
+  <div class="card">
+    <div class="head">
+      <div class="badge"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></div>
+      <h1>Acceso Central Unificado</h1>
+      <p class="sub">Plataforma Comercial y Operativa • Camargo Group &amp; BCP</p>
+    </div>
+    <form id="loginForm">
+      <div>
+        <label for="inpUser">Usuario</label>
+        <div class="fld"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg>
+          <input id="inpUser" name="usuario" type="text" required autofocus autocomplete="username" autocapitalize="none" spellcheck="false"></div>
+      </div>
+      <div>
+        <label for="inpPass">Contraseña</label>
+        <div class="fld"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>
+          <input id="inpPass" name="clave" type="password" required autocomplete="current-password"></div>
+      </div>
+      <div id="loginError" class="err" role="alert" hidden></div>
+      <button id="btnLogin" class="go" type="submit">Ingresar al Portal</button>
+    </form>
+  </div>
+</div>
+
+<!-- Aplicación -->
+<div id="app" class="app" hidden>
+  <header class="top">
+    <div class="top-status">
+      <div class="brand"><span class="dot"></span><b>Camargo Group</b><span class="x">×</span><span class="c">Canal BCP Convenios</span></div>
+      <span class="tag">Campaña 2026</span>
+      <span class="ses"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg><span id="sesTxt"></span></span>
+    </div>
+    <div class="top-nav">
+      <div id="tabs" class="tabs" role="tablist" aria-label="Herramientas"></div>
+      <div class="acts">
+        <button id="btnReload" class="ibtn" type="button" title="Recargar herramienta" aria-label="Recargar herramienta"><svg class="i" aria-hidden="true"><use href="#i-reload"/></svg></button>
+        <button id="btnExt" class="ibtn" type="button" title="Abrir en pestaña nueva" aria-label="Abrir en pestaña nueva"><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg></button>
+        <button id="btnOut" class="ibtn out" type="button" title="Cerrar sesión" aria-label="Cerrar sesión"><svg class="i" aria-hidden="true"><use href="#i-out"/></svg><span class="lbl">Salir</span></button>
+      </div>
+    </div>
+  </header>
+  <main id="paneles" class="paneles"></main>
+</div>
+
+<script>
+// --- CAPA DE SEGURIDAD FRONTEND ---
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+    if (e.key === 'F12' || 
+       (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+       (e.ctrlKey && e.key === 'U' || e.key === 'u') || 
+       (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'J' || e.key === 'U'))) {
+        e.preventDefault();
+    }
+});
+setInterval(() => {
+    const start = performance.now();
+    debugger;
+    if (performance.now() - start > 100) {
+        document.body.innerHTML = '<div style="background:#0b1329;height:100vh;display:flex;align-items:center;justify-content:center;color:#fff;font-family:sans-serif;"><h1>Acceso Denegado</h1></div>';
+    }
+}, 1000);
+
+// --- LÓGICA DE LA APLICACIÓN ---
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const TITULO = document.title;
+const TIEMPO_LIMITE = 12000;
+const SANDBOX = 'allow-scripts allow-forms allow-same-origin allow-modals allow-downloads allow-popups';
+const PERMISOS = 'clipboard-read; clipboard-write';
+
+const MODULOS = [
+  { id: 'convenios', label: 'Convenios Públicos', icono: 'i-calc',   url: 'https://lattis-pro.github.io/CalcConvenios/' },
+  { id: 'essalud',   label: 'EsSalud',            icono: 'i-plus',   url: 'https://lattis-pro.github.io/CalcEssalud/' },
+  { id: 'filtro',    label: 'Módulo Filtro',      icono: 'i-filter', url: 'https://lattis-pro.github.io/ModuloFiltro/' },
+  { id: 'cem',       label: 'Filtro CEM',         icono: 'i-board',  url: 'https://lattis-pro.github.io/FiltroCem/' },
+  { id: 'formatos',  label: 'Formatos IA',        icono: 'i-doc',    url: 'https://lattis-pro.github.io/FormatosIA/' }
+];
+const ids = MODULOS.map(m => m.id);
+const porId = Object.fromEntries(MODULOS.map(m => [m.id, m]));
+
+// --- USUARIOS CONFIGURADOS ---
+const CUENTAS_DEMO = [
+  { usuario: 'admin',    clave: 'bcp2026',   rol: 'Lattis-Admin' },
+  { usuario: 'back', clave: 'back2027', rol: 'BackOffice' },
+  { usuario: 'asesor20', clave: 'camargo20', rol: 'asesor' },
+  { usuario: 'asesor26', clave: 'camargo26', rol: 'asesor' },
+  { usuario: 'asesor27', clave: 'camargo27', rol: 'asesor' },
+  { usuario: 'asesor28', clave: 'camargo28', rol: 'asesor' },
+  { usuario: 'asesor29', clave: 'camargo29', rol: 'asesor' },
+  { usuario: 'asesor30', clave: 'camargo30', rol: 'asesor' }
+];
+
+async function autenticar(usuario, clave) {
+  const c = CUENTAS_DEMO.find(x => x.usuario === usuario.toLowerCase() && x.clave === clave);
+  return c ? { ok: true, usuario: c.usuario, rol: c.rol } : { ok: false };
+}
+
+let sesion = null, actual = null, paneles = {};
+const ico = id => '<svg class="i" aria-hidden="true"><use href="#' + id + '"/></svg>';
+const idHash = () => location.hash.slice(1);
+const abrirExterno = () => window.open(porId[actual].url, '_blank', 'noopener,noreferrer');
+
+function construir() {
+  const tabs = $('tabs'), cont = $('paneles');
+  tabs.replaceChildren(); cont.replaceChildren(); paneles = {};
+  MODULOS.forEach(m => {
+    const tab = document.createElement('button'), el = document.createElement('section'),
+          f = document.createElement('iframe'), ov = document.createElement('div');
+    tab.type = 'button'; tab.className = 'tab'; tab.id = 'tab-' + m.id; tab.dataset.id = m.id; tab.tabIndex = -1;
+    tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', 'panel-' + m.id); tab.setAttribute('aria-selected', 'false');
+    tab.innerHTML = ico(m.icono) + '<span></span>'; tab.lastChild.textContent = m.label;
+    el.className = 'panel'; el.id = 'panel-' + m.id; el.hidden = true;
+    el.setAttribute('role', 'tabpanel'); el.setAttribute('aria-labelledby', tab.id);
+    f.title = m.label; f.setAttribute('sandbox', SANDBOX); f.setAttribute('allow', PERMISOS);
+    ov.className = 'ov'; ov.hidden = true; ov.setAttribute('role', 'status');
+    ov.innerHTML = '<div class="spin"></div><p></p><div class="ov-b" hidden>' +
+      '<button type="button" class="btn" data-a="r">Reintentar</button>' +
+      '<button type="button" class="btn" data-a="e">Abrir en pestaña nueva</button></div>';
+    el.append(f, ov); tabs.append(tab); cont.append(el);
+    const p = paneles[m.id] = { tab, el, f, ov, msg: ov.children[1], bot: ov.children[2], cargando: false, iniciado: false, t: 0 };
+    f.addEventListener('load', () => { if (p.cargando) { p.cargando = false; clearTimeout(p.t); ov.hidden = true; } });
+  });
+}
+
+function cargar(id) {
+  const p = paneles[id], m = porId[id];
+  clearTimeout(p.t); p.cargando = true; p.iniciado = true;
+  p.msg.textContent = 'Cargando ' + m.label + '…'; p.bot.hidden = true; p.ov.hidden = false;
+  p.t = setTimeout(() => {
+    p.msg.textContent = 'Está tardando más de lo normal. Puede que tu red esté bloqueando el sitio: reintenta o ábrelo en una pestaña nueva.';
+    p.bot.hidden = false;
+  }, TIEMPO_LIMITE);
+  p.f.src = m.url;
+}
+
+function activar(id, actualizarHash = true) {
+  if (!ids.includes(id)) id = ids[0];
+  actual = id;
+  MODULOS.forEach(m => {
+    const p = paneles[m.id], on = m.id === id;
+    p.tab.setAttribute('aria-selected', String(on)); p.tab.tabIndex = on ? 0 : -1; p.el.hidden = !on;
+  });
+  if (!paneles[id].iniciado) cargar(id);
+  if (actualizarHash) history.replaceState(null, '', '#' + id);
+  document.title = porId[id].label + ' | ' + TITULO;
+}
+
+function entrar(r) {
+  sesion = r;
+  $('login').hidden = true; $('app').hidden = false;
+  $('sesTxt').textContent = 'Sesión activa: ' + r.usuario;
+  construir();
+  activar(idHash());
+}
+
+function salir() {
+  Object.values(paneles).forEach(p => clearTimeout(p.t));
+  sesion = null; actual = null; paneles = {};
+  $('tabs').replaceChildren(); $('paneles').replaceChildren(); 
+  $('app').hidden = true; $('login').hidden = false;
+  $('inpPass').value = ''; document.title = TITULO; $('inpUser').focus();
+}
+
+$('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('loginError'), btn = $('btnLogin');
+  err.hidden = true; btn.disabled = true; btn.textContent = 'Verificando...';
+  try {
+    const r = await autenticar($('inpUser').value.trim(), $('inpPass').value.trim());
+    if (r && r.ok) {
+        entrar(r);
+    } else { 
+        err.textContent = 'Usuario o contraseña incorrectos.'; err.hidden = false; $('inpPass').select(); 
+    }
+  } catch {
+    err.textContent = 'Error de conexión. Inténtalo de nuevo.'; err.hidden = false;
+  }
+  btn.disabled = false; btn.textContent = 'Ingresar al Portal';
+});
+
+$('tabs').addEventListener('click', e => {
+  const t = e.target.closest('[role=tab]');
+  if (t) activar(t.dataset.id);
+});
+$('tabs').addEventListener('keydown', e => {
+  const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+  if (!d) return;
+  const n = ids[(ids.indexOf(actual) + d + ids.length) % ids.length];
+  activar(n); paneles[n].tab.focus(); e.preventDefault();
+});
+$('paneles').addEventListener('click', e => {
+  const b = e.target.closest('[data-a]');
+  if (b) b.dataset.a === 'r' ? cargar(actual) : abrirExterno();
+});
+$('btnReload').addEventListener('click', () => cargar(actual));
+$('btnExt').addEventListener('click', abrirExterno);
+$('btnOut').addEventListener('click', salir);
+window.addEventListener('hashchange', () => { if (sesion && idHash() !== actual) activar(idHash(), false); });
+})();
+
+// --- REGISTRO PWA ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
