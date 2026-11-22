@@ -1,24 +1,32 @@
 {
+  "id": "/app/",
   "name": "Portal Unificado | Camargo Group",
   "short_name": "Camargo BCP",
-  "start_url": "/#convenios",
-  "scope": "/",
+  "description": "Plataforma Comercial y Operativa - Camargo Group & BCP",
+  "start_url": "/app/#convenios",
+  "scope": "/app/",
   "display": "standalone",
   "background_color": "#0b1329",
   "theme_color": "#0f172a",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/app/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/app/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
